@@ -258,21 +258,69 @@ nav a:hover { color: var(--blue); text-decoration: underline; }
 
 /* Disclosures */
 details {
-  margin-top: 24px; border-block: 1px solid var(--rule-soft);
-  padding-block: 14px; max-width: 60ch;
+  margin-top: 28px;
+  border: 1px solid var(--rule-soft);
+  background: var(--sheet);
+  padding: 16px 20px;
+  max-width: 60ch;
 }
 summary {
-  cursor: pointer; font-size: 15px; color: var(--blue);
-  min-height: 44px; display: flex; align-items: center; font-weight: 500;
+  cursor: pointer;
+  font-size: 15px;
+  color: var(--blue);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  list-style: none;
+  user-select: none;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after {
+  content: "↓";
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--muted);
+  transition: transform 0.15s ease;
+  margin-left: 12px;
+}
+details[open] summary::after {
+  content: "↑";
 }
 details p {
-  font-size: 15px; color: var(--muted); margin: 12px 0 8px; line-height: 1.6;
+  font-size: 15px;
+  color: var(--muted);
+  margin: 14px 0 8px;
+  line-height: 1.6;
 }
 
-/* Research Links */
-.research-links { padding-left: 20px; font-size: 14px; color: var(--muted); margin-top: 16px; }
-.research-links li { margin-top: 12px; line-height: 1.55; }
-.research-links a { min-height: 44px; display: inline-block; padding-block: 4px; }
+/* Research Bibliography Cards */
+.research-list {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 0;
+  max-width: 60ch;
+}
+.research-card {
+  padding-block: 20px;
+  border-top: 1px solid var(--rule-soft);
+}
+.research-card:first-child { border-top: 1px solid var(--rule); }
+.research-card a {
+  font: 500 16px/1.4 var(--sans);
+  display: inline-block;
+  margin-bottom: 6px;
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.research-meta {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0;
+}
 
 /* Founder Section */
 .founder h2 { margin-bottom: 18px; }
@@ -505,10 +553,19 @@ footer {
       <p>paperkinn grounds its design in these findings, translating psychological insights into tangible agent behaviors:</p>
     </div>
 
-    <ul class="research-links">
-      <li><a href="https://arxiv.org/html/2411.13950v1">Developer experiences with ADHD and autism</a> · 2024 empirical preprint exploring executive function and workplace accommodations across 25 neurodivergent engineers.</li>
-      <li><a href="https://stackoverflow.blog/2023/06/05/what-developers-with-adhd-want-you-to-know/">What developers with ADHD want you to know</a> · Field accounts published by Stack Overflow on hyperfocus, task paralysis, and tool fatigue.</li>
-      <li><a href="https://code.claude.com/docs/en/memory">Claude Code architecture &amp; memory primitives</a> · The native session baseline that paperkinn extends with stateful behavioral scaffolding.</li>
+    <ul class="research-list">
+      <li class="research-card">
+        <a href="https://arxiv.org/html/2411.13950v1">Developer experiences with ADHD and autism ↗</a>
+        <p class="research-meta">2024 empirical preprint exploring executive function, workplace accommodations, and task-initiation barriers across 25 neurodivergent software engineers.</p>
+      </li>
+      <li class="research-card">
+        <a href="https://stackoverflow.blog/2023/06/05/what-developers-with-adhd-want-you-to-know/">What developers with ADHD want you to know ↗</a>
+        <p class="research-meta">Field accounts published by Stack Overflow on hyperfocus runaway, task paralysis, and tooling fatigue in daily engineering workflows.</p>
+      </li>
+      <li class="research-card">
+        <a href="https://code.claude.com/docs/en/memory">Claude Code architecture &amp; memory primitives ↗</a>
+        <p class="research-meta">The native session and memory baseline that paperkinn extends with stateful behavioral scaffolding and tiered care boundaries.</p>
+      </li>
     </ul>
 
     <details>
@@ -534,10 +591,19 @@ footer {
 
     <details>
       <summary>Character training &amp; comparative research</summary>
-      <ul class="research-links">
-        <li><a href="https://www.anthropic.com/news/claude-character">Claude’s Character</a> · Anthropic alignment research on training curiosity, intellectual honesty, and constructive disagreement over sycophancy.</li>
-        <li><a href="https://arxiv.org/abs/2406.15198">Assistive interaction benchmarks</a> · Comparative study highlighting Claude’s coherence, boundary respect, and nuanced communication in sensitive interaction settings.</li>
-        <li><a href="https://arxiv.org/abs/2509.08839">Clinical safety evaluations in high-risk disclosures</a> · Evaluation demonstrating Claude’s strong performance in risk acknowledgment and sustained constructive dialogue.</li>
+      <ul class="research-list" style="margin-top: 14px;">
+        <li class="research-card" style="padding-block: 14px;">
+          <a href="https://www.anthropic.com/news/claude-character">Claude’s Character ↗</a>
+          <p class="research-meta">Anthropic alignment research on training curiosity, intellectual honesty, and constructive disagreement over sycophancy.</p>
+        </li>
+        <li class="research-card" style="padding-block: 14px;">
+          <a href="https://arxiv.org/abs/2406.15198">Assistive interaction benchmarks ↗</a>
+          <p class="research-meta">Comparative study highlighting Claude’s coherence, boundary respect, and nuanced communication in sensitive interaction settings.</p>
+        </li>
+        <li class="research-card" style="padding-block: 14px;">
+          <a href="https://arxiv.org/abs/2509.08839">Clinical safety evaluations in high-risk disclosures ↗</a>
+          <p class="research-meta">Evaluation demonstrating Claude’s strong performance in risk acknowledgment and sustained constructive dialogue.</p>
+        </li>
       </ul>
     </details>
   </div>
