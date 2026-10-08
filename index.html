@@ -224,6 +224,9 @@ nav a:hover { color: var(--blue); text-decoration: underline; }
 .section-lead { margin-bottom: 22px; max-width: 32ch; }
 .body-copy { max-width: 60ch; color: var(--muted); font-size: 17px; }
 .body-copy p + p { margin-top: 16px; }
+.body-copy ul { margin: 18px 0; padding-left: 20px; display: flex; flex-direction: column; gap: 12px; }
+.body-copy li { line-height: 1.6; }
+.body-copy strong { font-weight: 500; color: var(--ink); }
 
 /* Principles List */
 .principles { list-style: none; padding: 0; margin: 32px 0 0; }
@@ -459,11 +462,11 @@ footer {
   </div>
   <div>
     <h3>Hyperfocus outruns the body.</h3>
-    <p>Hours vanish in deep technical flow. The code advances brilliantly, but thirst, meals, and the clock disappear until you crash.</p>
+    <p>You solve hard problems for five hours straight. The code moves fast, but meals, water, and time disappear until you hit a wall.</p>
   </div>
   <div>
     <h3>Stopping means losing your place.</h3>
-    <p>You leave mid-debug. Returning means reconstructing what failed, what was ruled out, and where to restart.</p>
+    <p>Disengaging has high friction. Stepping away feels like losing your mental stack unless the exact context is safely held.</p>
   </div>
 </section>
 
@@ -547,29 +550,36 @@ footer {
     <span class="chapter-tag" id="research-label">Grounded in research</span>
   </div>
   <div>
-    <h2 class="section-lead">Beyond executive deficits: Scaffolding the hyperfocus engine.</h2>
+    <h2 class="section-lead">A documented pain point. An active architecture.</h2>
     <div class="body-copy">
-      <p>Conventional productivity tools view ADHD and autism solely through a deficit lens: disorganization, scatterbrained avoidance, and executive friction. But cognitive research and lived developer accounts reveal a more nuanced reality governed by <strong>attention dysregulation and monotropism</strong>: the defining challenge is rarely an absence of focus, but the intense gravitational pull of high-interest problem solving.</p>
-      <p>Inside <strong>hyperfocus</strong>, neurodivergent engineers demonstrate profound systems synthesis and deep technical problem-solving. It is the generative engine of breakthrough architectural work, not an operational flaw to be suppressed. Yet this state carries distinct vulnerabilities: <em>attentional inertia</em> makes shifting gears jarring and painful, while <em>interoceptive blindness</em> actively filters out physical signals—hunger, thirst, and fatigue—until sudden metabolic depletion hits. Paired with high-speed coding agents that eliminate natural waiting latency, hyperfocus easily accelerates into midnight marathons, followed by post-flow exhaustion and friction at the final, administrative mile.</p>
-      <p>paperkinn translates empirical research on monotropism, attentional inertia, and neurodivergent engineering workflows into tangible runtime behaviors—protecting the developer’s body and momentum without disrupting their deepest flow:</p>
+      <p>Most productivity tools treat ADHD and autism like simple disorganization. They assume you just need another timer, stricter checklists, or color-coded calendars.</p>
+      <p>Cognitive research points to a different reality: the core pattern is <strong>hyperfocus and monotropism</strong>. When an engineer with ADHD or autism finds an interesting problem, attention narrows into a powerful beam. You can design complex systems, hold entire codebases in your head, and build at remarkable speed.</p>
+      <p>That focus is a genuine strength, but it comes with real physical and cognitive friction:</p>
+      <ul>
+        <li><strong>Attentional inertia:</strong> Pulling away from deep code is jarring. A noisy alarm or sudden interruption feels physically painful, so you dismiss it and keep going.</li>
+        <li><strong>Ignored body signals:</strong> Deep focus quiets physical awareness. You do not notice thirst, hunger, or stiff shoulders until you stand up and feel completely drained.</li>
+        <li><strong>Agents accelerate the sprint:</strong> Fast coding agents remove the natural pauses of compilation and debugging. Prompts flow instantly, turning a two-hour session into an accidental six-hour marathon.</li>
+        <li><strong>The finish-line wall:</strong> Once the complex problem is solved, dopamine drops. The last 10%—writing PR descriptions, cleaning up notes, and filing tickets—feels impossible to push through.</li>
+      </ul>
+      <p>paperkinn builds around these rhythms. It protects your deep flow instead of policing it, tracks physical time in the background, saves your exact place so stopping feels safe, and helps you close the last mile before exhaustion sets in.</p>
     </div>
 
     <ul class="research-list">
       <li class="research-card">
         <a href="https://doi.org/10.1007/s00426-019-01245-8">Hyperfocus: The forgotten frontier of attention ↗</a>
-        <p class="research-meta">Ashinoff &amp; Abu-Akel (2021). Foundational cognitive research defining ADHD hyperfocus as an intense, absorption-driven state with heightened task engagement, suppressed external distraction, and significant attentional inertia.</p>
+        <p class="research-meta">Ashinoff &amp; Abu-Akel (2021). Research on ADHD hyperfocus as a deep, immersive flow state marked by high task engagement and heavy switching costs.</p>
       </li>
       <li class="research-card">
         <a href="https://doi.org/10.1177/1362361305051398">Attention, monotropism and the diagnostic view of autism ↗</a>
-        <p class="research-meta">Murray, Lesser, &amp; Lawson (2005). Seminal cognitive framework exploring how monotropic attention channels cognitive bandwidth into narrow, high-depth problem spaces, explaining both deep flow and the friction of task switching.</p>
+        <p class="research-meta">Murray, Lesser, &amp; Lawson (2005). The foundational theory explaining how autistic attention concentrates intensely on single problems at the expense of broad awareness.</p>
       </li>
       <li class="research-card">
         <a href="https://arxiv.org/html/2411.13950v1">Developer experiences with ADHD and autism ↗</a>
-        <p class="research-meta">2024 empirical preprint exploring executive function, workplace accommodations, task-initiation barriers, and tooling needs across 25 neurodivergent software engineers.</p>
+        <p class="research-meta">2024 empirical study on how 25 neurodivergent software engineers navigate task initiation, tooling friction, and workplace energy.</p>
       </li>
       <li class="research-card">
         <a href="https://stackoverflow.blog/2023/06/05/what-developers-with-adhd-want-you-to-know/">What developers with ADHD want you to know ↗</a>
-        <p class="research-meta">Field accounts published by Stack Overflow on hyperfocus runaway, dopamine-driven coding marathons, task paralysis, and tooling fatigue in daily engineering workflows.</p>
+        <p class="research-meta">Stack Overflow field interviews on runaway hyperfocus, late-night coding loops, and task paralysis in real engineering teams.</p>
       </li>
       <li class="research-card">
         <a href="https://code.claude.com/docs/en/memory">Claude Code architecture &amp; memory primitives ↗</a>
